@@ -57,7 +57,7 @@ export const App: React.FC = () => {
       title: title,
       userId: userId,
       completed: false,
-      user: getUserById(userId),
+      user: getUserById(userId) || null,
     };
 
     setTodos(prev => [...prev, newTodo]);
@@ -78,6 +78,7 @@ export const App: React.FC = () => {
             data-cy="titleInput"
             placeholder="Enter a title"
           />
+          <label htmlFor="titleInput">Title</label>
           {hasTitleError && <span className="error">Please enter a title</span>}
         </div>
 
@@ -95,6 +96,7 @@ export const App: React.FC = () => {
                 {user.name}
               </option>
             ))}
+            <label htmlFor="userSelect">User</label>
           </select>
 
           {hasUserIdError && (
@@ -105,7 +107,7 @@ export const App: React.FC = () => {
         <button type="submit" data-cy="submitButton">
           Add
         </button>
-          </form>
+      </form>
 
       <TodoList todos={todos} />
     </div>

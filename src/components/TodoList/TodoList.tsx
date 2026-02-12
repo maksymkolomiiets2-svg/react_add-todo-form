@@ -4,11 +4,7 @@ type Props = {
   todos: Todo[];
 };
 
-export const TodoList: React.FC<Props> = ({ todos }) => {
-  if (!todos) {
-    return null;
-  }
-
+export const TodoList: FC<Props> = ({ todos }) => {
   return (
     <section className="TodoList">
       {todos.map(todo => (
