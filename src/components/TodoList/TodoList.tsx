@@ -5,6 +5,10 @@ type Props = {
 };
 
 export const TodoList: React.FC<Props> = ({ todos }) => {
+  if (!todos) {
+    return null;
+  }
+
   return (
     <section className="TodoList">
       {todos.map(todo => (

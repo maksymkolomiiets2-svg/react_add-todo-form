@@ -105,7 +105,7 @@ export const App: React.FC = () => {
         <button type="submit" data-cy="submitButton">
           Add
         </button>
-      </form>
+          </form>
 
       <TodoList todos={todos} />
     </div>
